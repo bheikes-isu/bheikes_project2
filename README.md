@@ -1,0 +1,2 @@
+# bheikes_project
+Dress for the Weather is an application that helps users plan their outfit based on the weather. They simply enter their location and then they recieve a sample outfit that is well-suited for that days temperatures. 
