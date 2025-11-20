@@ -4,7 +4,21 @@ import pandas as pd
 import requests_cache
 from retry_requests import retry
 from geopy.geocoders import Nominatim
-#import openai
+from openai import OpenAI
+from keys import openai_key
+from datetime import datetime 
+
+def chatoutput(activity, weatherdata):
+    time= datetime.now()
+    client= OpenAI(
+    api_key=(openai_key)
+    )
+    response= client.responses.create(
+        model= "gpt-4o",
+        instructions= "You are recommending an outfit based on the weather and activity data that will be passed to you",
+        input= "The date and time is {time}. These are the weather conditions for today: {weatherdata}. This is the activity that the user will be doing: {activity}."
+    )
+    return response.output_text
 
 
 
