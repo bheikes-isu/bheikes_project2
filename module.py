@@ -1,4 +1,3 @@
-# %%
 import openmeteo_requests as omr
 import pandas as pd 
 import requests_cache

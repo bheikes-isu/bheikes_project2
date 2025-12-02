@@ -1,4 +1,4 @@
-import module
+import module as module
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -6,7 +6,15 @@ import plotly.graph_objects as go
 from datetime import datetime, timezone, timedelta
 import pandas as pda
 
+st.set_page_config(
+    page_title="Dress for the Weather",
+    page_icon="👗",
+    layout="centered",
+    initial_sidebar_state="expanded"
+)
+
 st.title("Dress for the Weather")
+st.caption("Get personalized outfit recommendations based on real-time weather.")
 
 # Ask for location
 place = st.text_input("Enter your location")
