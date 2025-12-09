@@ -1,4 +1,4 @@
-import WIP2
+import old.WIP2 as WIP2
 import streamlit as st
 import pandas as pd
 import plotly.express as px
