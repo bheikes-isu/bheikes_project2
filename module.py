@@ -9,6 +9,16 @@ from datetime import datetime
 from streamlit import secrets 
 
 def chatoutput(activity, current_weather, location, hourly_forecast=None):
+    '''
+    queries ChatGPT and relays its output
+    Args: 
+        activity: string that defines user activity
+        current_weather: weather at users location
+        location: users location
+        hourly_forecast: forecasted weather
+    Returns:
+        chatGPT response of outfit recommendation
+    '''
     time= datetime.now()
     client= OpenAI(
     api_key=(secrets.get("openai_key"))
@@ -36,6 +46,13 @@ def chatoutput(activity, current_weather, location, hourly_forecast=None):
 
 
 def getcoordinates(userlocation):
+    '''
+    gets user location
+    Args:
+        userlocation: location the user inputs
+    Returns:
+        coordinates
+    '''
     if (userlocation is None or userlocation==""):
         return ""
     try:
@@ -50,6 +67,14 @@ def getcoordinates(userlocation):
  
 
 def getweather(lat, lon): # get weather data for given lat, lon
+    '''
+    gets weather data for user location
+    Args:
+        lat: location latitude 
+        lon: location longitude
+    Returns:
+        current weather, hourly_dataframe, current_date, timezone_offset_seconds
+    '''
     cache_session = requests_cache.CachedSession('.cache', expire_after = 3600)
     retry_session = retry(cache_session, retries = 5, backoff_factor = 0.2)
     openmeteo = omr.Client(session = retry_session)

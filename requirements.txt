@@ -1,11 +1,11 @@
-geopy==2.4.1
-openai==2.6.0
-openmeteo_requests==1.7.3
-openmeteo_sdk==1.21.2
-pandas==2.2.3
-plotly==6.3.1
-requests==2.32.3
-requests-cache==1.2.1
-retry-requests==2.0.0
-streamlit==1.50.0
+geopy>=2.4.1
+openai>=2.6.0
+openmeteo_requests>=1.7.3
+openmeteo_sdk>=1.21.2
+pandas>=2.2.3
+plotly>=6.3.1
+requests>=2.32.3
+requests-cache>=1.2.1
+retry-requests>=2.0.0
+streamlit>=1.50.0
 
