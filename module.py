@@ -4,7 +4,7 @@ import requests_cache
 from retry_requests import retry
 from geopy.geocoders import Nominatim
 from openai import OpenAI
-from keys import openai_key
+#from keys import openai_key
 from datetime import datetime
 from streamlit import secrets 
 
