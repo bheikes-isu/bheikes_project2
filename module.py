@@ -5,12 +5,13 @@ from retry_requests import retry
 from geopy.geocoders import Nominatim
 from openai import OpenAI
 from keys import openai_key
-from datetime import datetime 
+from datetime import datetime
+from streamlit import secrets 
 
 def chatoutput(activity, current_weather, location, hourly_forecast=None):
     time= datetime.now()
     client= OpenAI(
-    api_key=(openai_key)
+    api_key=(secrets.get("openai_key"))
     )
     
     # Format current weather (including wind and precipitation) for the prompt
